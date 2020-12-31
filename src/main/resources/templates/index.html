@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <!-- <meta http-equiv="refresh" content="3"> -->
+</head>
+
+<body>
+<div>
+    <img class="logo" src="/imgs/logo.png">
+</div>
+
+<div class="d-flex align-items-center flex-column justify-content-center h-75" id="header">
+    <div class="border rounded box floating-box">
+        <p class="cms-title">LOGIN</p>
+        <form id="login_form" action="" method="post">
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+              <span class="input-group-text">
+                <img src="/icons/salesmanager_icon.png">
+              </span>
+                    </div>
+                    <input class="form-control form-control-lg" placeholder="Email" type="text" id="email" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+              <span class="input-group-text">
+                <img src="/icons/password_icon.png">
+              </span>
+                    </div>
+                    <input class="form-control form-control-lg" placeholder="Password" type="password" id="password">
+                </div>
+
+                <button id="login-button" class="btn btn-info cms-btn float-right"> Login</button>
+            </div>
+        </form>
+        <a href="/reset/password" class="cms-forgot">Forgot your password?</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<script src="/js/utils.js"></script>
+</body>
+</html>

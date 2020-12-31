@@ -1,0 +1,32 @@
+runtime: java11
+
+instance_class: F1
+
+automatic_scaling:
+  # min_idle_instances: 1
+  # max_instances: 2
+  min_instances: 0
+  max_concurrent_requests: 80
+  target_cpu_utilization: 0.8
+  target_throughput_utilization: 0.8
+  min_pending_latency: 6s
+  max_pending_latency: 14s
+
+# force HTTPS
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+    redirect_http_response_code: 301
+
+inbound_services:
+  - warmup
+
+
+#entrypoint: java -Xmx64m -jar amadeus-0.0.3.jar -noverify
+entrypoint: java -Xmx64m -jar cloud_computing-0.0.1-SNAPSHOT.jar -noverify
+# entrypoint: java -Xmx64m -jar amadeus-0.0.3.jar -noverify -Dspring.jmx.enabled=false -XX:TieredStopAtLevel=1
+# Explicitly set the memory limit and maximum heap size for the Spring Boot app
+env_variables:
+  JAVA_TOOL_OPTIONS: "-XX:TieredStopAtLevel=1  -Dspring.jmx.enabled=false"
+

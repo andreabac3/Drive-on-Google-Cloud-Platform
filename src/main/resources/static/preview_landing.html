@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    <style>
+
+        .cms-blue-heading {
+            font-size: 11pt;
+            width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #005eb8;
+        }
+
+        .main {
+            position: relative;
+            width: 1024px;
+            height: 640px;
+            margin: auto;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .half-banner {
+            position: absolute;
+            right: 0;
+            top:106px;
+            width: 334px;
+            height: 22px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .full-banner {
+            position: absolute;
+            right: 0;
+            top:106px;
+            width: 334px;
+            height: 44px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .i-frame {
+            position: absolute;
+            margin: auto;
+            width: 385px;
+            height: 418px;
+            left: 367px;
+            top: 130px;
+            background-size: inherit;
+            background-repeat: no-repeat;
+            display: none;
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #e1e1e1;
+            color: #666;
+            cursor: pointer;
+        }
+
+        body {
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="alert alert-primary" role="alert">
+    <b>Make sure Ad-blocking plugins are disabled and Pop-up are enabled in your browser.</b>
+</div>
+<div id="guida"class="alert alert-primary" role="alert">
+    <b>Please take the following steps:<br>
+    1. Mouse-over on the half banner (banner displayed), to see the full banner<br>
+        2. Click on full banner to see the iframe</b>
+</div>
+<div class="main" id="main">
+    <div class="half-banner" id="banner"></div>
+    <div class="i-frame" id="frame">
+        <span class="close" id="close">x</span>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script>
+    const back = {
+        'Sign-in Header Banner': '/imgs/banners/Sign-in Header.png',
+        'Air Availability Banner': '/imgs/banners/Availability.jpg',
+        'After Sell Banner': '/imgs/banners/After sell banner.png',
+        'Retrieve PNR Banner': '/imgs/banners/PNR retrieve.jpg',
+    };
+
+    let banner = document.getElementById('banner');
+    let frame = document.getElementById('frame');
+    let main = document.getElementById('main');
+    let close = document.getElementById('close');
+
+    let clickable = false;
+
+    params = getUrlVars();
+
+    params['base'] = params['base'].replace(/\+/g, ' ');
+    document.title = params['base'];
+    main.style.backgroundImage = "url('" + back[params['base']] + "')";
+
+    banner.style.backgroundImage = "url('" + params['image'] + "')";
+    if(params['pop'])
+        frame.style.backgroundImage = "url('" + params['pop'] + "')";
+
+    main.onclick = function() {
+        console.log('main.onclick');
+        frame.style.display = 'none'
+    };
+
+    banner.onmouseover = function () {
+        console.log('onmouseover');
+        this.classList.remove('half-banner');
+        this.classList.add('full-banner');
+        banner.style.backgroundImage = "url('" + params['hover'] + "')";
+        if(params['pop'])
+            clickable = true;
+    };
+
+    banner.onmouseout =  function () {
+        console.log('onmouseout');
+        m_mouseout(this)
+    };
+
+    function m_mouseout(elem) {
+        elem.classList.remove('full-banner');
+        elem.classList.add('half-banner');
+        banner.style.backgroundImage = "url('" + params['image'] + "')";
+        clickable = false;
+    }
+
+    banner.onclick = function (e) {
+        if(clickable) {
+            console.log('clickable');
+            m_mouseout(this);
+            frame.style.display = 'block';
+
+            e.stopPropagation();
+        } else {
+            console.log('NOT clickable');
+        }
+    };
+
+    frame.onclick = function (e) {
+        e.stopPropagation();
+    };
+
+    close.onclick = function (e) {
+        e.stopPropagation();
+        frame.style.display = 'none';
+    };
+
+</script>
+</body>
+</html>

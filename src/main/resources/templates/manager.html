@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>File Manager</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="/css/style.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+<div class="header-section">
+    <img width="150px" class="logo" src="/imgs/amadeus_crs_logo.svg.png"/>
+</div>
+<div class="border rounded  white-bubble" id="header">
+
+    <img src="/icons/back.svg" alt="go_back" onclick="back_folder()" class="back-page-arrow"/>
+
+    <div class="box">
+        <div>
+            <div class="row">
+                <div class="col-8">
+                    <div>
+                        <p class="cms-title">FILE MANAGER</p>
+                    </div>
+
+                    <h5 style="display: inline;" class="display-5" id="cwd-path"></h5>
+
+                    <br>
+
+                    <form>
+                        <label for="upload_files_input" class="btn">Upload Files:</label>
+                        <input type="file" id="upload_files_input" size="60" multiple onchange="javascript: uploadFiles()" value="Upload files">
+                        <!-- document.getElementById("submit_files").disabled = false -->
+<!--                        <span onclick="javascript: uploadFiles()">-->
+<!--                            <input type="button" class="btn btn-primary" id="upload_files_button" value="Upload">-->
+<!--                        </span>-->
+                    </form>
+                    <button type="button" class="btn btn-outline-primary" onclick="mkdir()">New Folder</button>
+
+                    <div id="warning-no-products" class="alert alert-primary" role="alert" style="display: none">
+                        <b>This campaign has no available products</b>
+                    </div>
+                    <div id="loading" style="text-align: center;">
+                        <img src="/imgs/loading.svg" width="200px">
+                    </div>
+
+                    <div id="file-manager"></div>
+
+                </div>
+                <div class="col-4">
+                    <!-- todo: in case of download block -> none -->
+                    <div id="future-preview" style="margin-top: 10px; display: block;">
+                        <div class="alert alert-primary" role="alert">
+                            <b>Make sure Ad-blocking plugins are disabled and Pop-up are enabled in your browser.</b>
+                        </div>
+                        <h3 class="cms-blue-heading"> Preview </h3>
+
+
+                        <hr/>
+                        <div id="div-preview">
+                            <div style="margin-bottom: 10px">
+                                <a  target="_blank" href="javascript:void(0)" id="download-preview">
+                                    <button type="button"  class="btn btn-outline-primary">Open in new tab</button>
+                                </a>
+
+                            </div>
+
+                            <br>
+                            <img width="90%" alt="preview" id="img-preview" src=""/>
+
+
+                        </div>
+                    </div>
+                    <div id="future-download" style="margin-top: 10px; display: none;">
+                        <h3> Download </h3>
+                        <hr/>
+                        <div id="div-download">
+                            <a href="#!" id="a-download">Download file </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/fileManager.js"></script>
+
+</html>
