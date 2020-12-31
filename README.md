@@ -26,19 +26,24 @@ The Download of the zip flow is shown in the figure:
 The other functionalities follow the same flow in figure:
 ![FlowDownloadDeleteUploadMkdir](./images/FlowDownloadDeleteUploadMkdir.png)
 
-### Compilation 
+## Compilation 
 To compile the project<br>
 
 1) Clone the repository
 2) Install all maven dependencies
 3) Install the Google Cloud Platform SDK
 4) Configure your Google Cloud Platform account with the GCP CLI and do the same for the Firebase API
-5) 
+5) You have to replace in code your authentication code otherwise you cannot access to the cloud services
+
+
+### Documentation
+We provide a documentation (pdf file in the repository root) but it's avaiable in Italian 🇮🇹 language.
+
 
 We found very hard working with documentation with the huge ammount of  API version, a common problem is that find the right maven repository version for the example in documentation.
 
 
-Authors:
+## Authors:
 - Andrea Bacciu (Cloud & Backend Developer) 
 - Valerio Neri (Frontend developer)
 
