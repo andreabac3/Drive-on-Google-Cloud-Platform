@@ -1,5 +1,7 @@
 # Drive-on-Google-Cloud-Platform
 
+[![License: GPL v3](https://img.shields.io/badge/-Sapienza%20University%20of%20Rome-red)](https://www.gnu.org/licenses/gpl-3.0)
+![License: GPL v3](https://www.gstatic.com/devrel-devsite/prod/veaa02889f0c07424beaa31d9bac1e874b6464e7ed7987fde4c94a59ace9487fa/cloud/images/cloud-logo.svg)
 
 A complete drive system built on Google Cloud platform with Spring using AppEngine, Firebase auth, Cloud functions, Cloud Storage.
 
@@ -11,11 +13,12 @@ We provide a [video](https://www.youtube.com/watch?v=6Uht4Emzqic) link to see al
 ## Architecture
 The project provide the following functionalities:<br>
 1)  Firebase Authentication Login/Logout
-2)  Mkdir 
-3)  Delete dir and content 
-4)  Delete file 
-5)  Upload file 
-6)  Download directory (using zip format using Cloud Function)
+2)  Listening folder
+3)  Mkdir 
+4)  Delete dir and content 
+5)  Delete file 
+6)  Upload file 
+7)  Download directory (using zip format using Cloud Function)
 
 The architecture is shown in this figure:
 ![architecturefigure](./images/ArchitectureDriveGCP.png)
@@ -43,7 +46,7 @@ We provide a documentation (pdf file in the repository root) but it's avaiable i
 We found very hard working with documentation with the huge ammount of  API version, a common problem is that find the right maven repository version for the example in documentation.
 
 
-## Authors:
-- Andrea Bacciu (Cloud & Backend Developer) 
-- Valerio Neri (Frontend developer)
+# Authors
 
+* **Andrea Bacciu**  - [github](https://github.com/andreabac3)
+* **Valerio Neri**  - [github](https://github.com/andreabac3)
