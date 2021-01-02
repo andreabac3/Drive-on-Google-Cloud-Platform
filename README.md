@@ -36,7 +36,10 @@ To compile the project<br>
 2) Install all maven dependencies
 3) Install the Google Cloud Platform SDK
 4) Configure your Google Cloud Platform account with the GCP CLI and do the same for the Firebase API
-5) You have to replace in code your authentication code otherwise you cannot access to the cloud services
+5) You have to replace in code your authentication code otherwise you cannot access to the cloud services <br>
+   5.1 Firebase Auth token in FirebaseLib constructor in the line .setDatabaseUrl("XXX")
+   5.2 FileController abstract class init change the byte array with your GCP configuration file.
+
 
 
 ### Documentation
