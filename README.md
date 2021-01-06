@@ -51,5 +51,5 @@ We found very hard working with documentation with the huge ammount of  API vers
 
 # Authors
 
-* **Andrea Bacciu**  - [github](https://github.com/andreabac3)
-* **Valerio Neri**  - [github](https://github.com/andreabac3)
+* **Andrea Bacciu** (Backend and cloud engineer) - [github](https://github.com/andreabac3)
+* **Valerio Neri** (Frontend developer) - [github](https://github.com/andreabac3)
